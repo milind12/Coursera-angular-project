@@ -9,9 +9,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Run server
 
 Run `npm install -g json-server` <br />
-Run `cd build` (Change current directory to build)
-Run `json-server db.json`
-Open `localhost:3000` in browser
+Run `cd build` (Change current directory to build) <br />
+Run `json-server db.json` <br />
+Open `localhost:3000` in browser <br />
 
 ## Code scaffolding
 
