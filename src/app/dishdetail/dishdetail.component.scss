@@ -1,0 +1,87 @@
+.dish-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.dish-card {
+  flex: 1;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+  justify-content: space-between;
+}
+.dish-card img {
+  flex-shrink: 1;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.form-container mat-form-field {
+  width: 60%;
+}
+.form-container button {
+  width: 100px;
+}
+.btn-panel {
+  display: flex;
+  flex-direction: row;
+}
+
+.spinnerContainer {
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-container {
+  flex: 1;
+}
+.dish-comments {
+  margin-bottom: 4px;
+  padding: 24px 15px;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.dish-comments::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dish-comments::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.dish-comments::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.dish-comment {
+  padding: 30px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dish-detail {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .btn-panel {
+    flex-direction: row;
+    display: flex;
+  }
+  .mat-button {
+    min-width: 10px;
+    flex: 1;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-panel {
+    justify-content: center;
+  }
+}

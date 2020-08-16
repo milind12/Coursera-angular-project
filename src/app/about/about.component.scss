@@ -1,0 +1,28 @@
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-glance {
+  display: flex;
+  flex-direction: row;
+}
+.history {
+  flex: 3;
+}
+.glance {
+  flex: 1;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.leader-item {
+  display: flex;
+  flex-direction: row;
+}
+.leader-desc {
+  display: flex;
+  flex-direction: column;
+}

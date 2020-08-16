@@ -1,0 +1,17 @@
+.c {
+  margin: 20px;
+}
+
+.spinnerContainer {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight {
+  border: 1px solid black;
+  z-index: 1;
+  transform: scale(1.01);
+}

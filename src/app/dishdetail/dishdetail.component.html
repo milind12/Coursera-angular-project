@@ -1,0 +1,90 @@
+<div *ngIf="!dish" class="spinnerContainer">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+<div class="container dish-detail" *ngIf="dish">
+  <mat-card class="dish-card">
+    <mat-card-header>
+      <mat-card-title style="font-weight: 700; font-size: large;">{{
+        dish.name | uppercase
+      }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ baseurl + dish.image }}" />
+    <mat-card-content>
+      <p>
+        {{ dish.description }}
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions class="btn-panel">
+      <button mat-button [routerLink]="['/dishdetail', prev]">
+        <span class="fa fa-chevron-left fa-lg"></span>
+      </button>
+      <button mat-button (click)="goBack()">BACK</button>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+
+      <button mat-button [routerLink]="['/dishdetail', next]">
+        <span class="fa fa-chevron-right fa-lg"></span>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="comment-container">
+    <mat-card class="dish-comments">
+      <mat-card-header>
+        <mat-card-title style="font-weight: 700; font-size: large;">
+          COMMENTS</mat-card-title
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let comment of getComments(dish)" class="dish-comment">
+          <div>{{ comment.comment }}</div>
+          <div>{{ comment.rating }} stars</div>
+          <div>
+            -- <span style="font-weight: 600;">{{ comment.author }}</span>
+            {{ comment.date | date }}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <form
+        class="form-container"
+        [formGroup]="commentForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="" />
+        </mat-form-field>
+        <p>
+          <mat-slider
+            [max]="max"
+            [min]="min"
+            [step]="step"
+            thumbLabel="true"
+            tickInterval="1"
+            formControlName="ratings"
+          ></mat-slider>
+        </p>
+        <mat-form-field>
+          <mat-label>Leave a comment</mat-label>
+          <textarea
+            formControlName="comments"
+            matInput
+            placeholder=""
+          ></textarea>
+        </mat-form-field>
+
+        <button
+          type="submit"
+          mat-button
+          class="background-primary text-floral-white"
+          disabled="{{ !commentForm.valid }}"
+        >
+          Submit
+        </button>
+      </form>
+    </mat-card>
+  </div>
+</div>
